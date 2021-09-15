@@ -28,8 +28,9 @@ class MainActivity : AppCompatActivity() {
 
         homeRecyclerViewAdapter.itemClickListener = { view, item, position ->
             val message = when(item){
-                is HomeRecyclerViewItem.Director -> "Director ${item.name} Clicked"
-                is HomeRecyclerViewItem.Movie -> "Movie ${item.title} Clicked"
+                is HomeRecyclerViewItem.News -> "Director ${item.title} Clicked"
+                is HomeRecyclerViewItem.UpcomingBets -> "Movie ${item.compatitor} Clicked"
+                is HomeRecyclerViewItem.PastBets -> "Movie ${item.compatitors} Clicked"
                 is HomeRecyclerViewItem.Title -> "View All Clicked"
             }
             snackbar(message)

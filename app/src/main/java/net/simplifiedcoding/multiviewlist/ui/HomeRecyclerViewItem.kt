@@ -7,19 +7,28 @@ sealed class HomeRecyclerViewItem {
         val title: String
     ) : HomeRecyclerViewItem()
 
-    class Movie(
+    class News(
         val id: Int,
+        val image: String,
         val title: String,
-        val thumbnail: String,
-        val release_date: String
+        val date: String,
+        val news_count :Int
     ) : HomeRecyclerViewItem()
 
-    class Director(
+    class UpcomingBets(
         val id: Int,
+        val compatitor: String,
+        val letter: String,
         val name: String,
-        val avatar: String,
-        val title : String,
-        val movie_count: Int
+        val upcoming_count: Int
+    ) : HomeRecyclerViewItem()
+
+    class PastBets(
+        val id: Int,
+        val compatitors: String,
+        val price: String,
+        val range: String,
+        val past_count: Int
     ) : HomeRecyclerViewItem()
 
 }

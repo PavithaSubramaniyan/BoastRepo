@@ -27,18 +27,22 @@ class HomeViewModel @Inject constructor(
 
     private fun getHomeListItems() = viewModelScope.launch {
         _homeListItemsLiveData.postValue(Resource.Loading)
-        val moviesDeferred = async { repository.getMovies() }
-        val directorsDeferred = async { repository.getDirectors() }
+        val newsDeferred = async { repository.getNews() }
+        val upcomingDeferred = async { repository.getUpcomingbets() }
+        val pastBetsDeferred = async { repository.getPastbets() }
 
-        val movies = moviesDeferred.await()
-        val directors = directorsDeferred.await()
+        val news = newsDeferred.await()
+        val upcoming = upcomingDeferred.await()
+        val pastBets = pastBetsDeferred.await()
 
         val homeItemsList = mutableListOf<HomeRecyclerViewItem>()
-        if(movies is Resource.Success && directors is Resource.Success){
+        if(news is Resource.Success && upcoming is Resource.Success  && pastBets is Resource.Success){
             homeItemsList.add(HomeRecyclerViewItem.Title(1, "Recommended Movies"))
-            homeItemsList.addAll(movies.value)
-            homeItemsList.add(HomeRecyclerViewItem.Title(2, "Top Directors"))
-            homeItemsList.addAll(directors.value)
+            homeItemsList.addAll(news.value)
+            homeItemsList.add(HomeRecyclerViewItem.Title(2, "Upcoming Bets"))
+            homeItemsList.addAll(upcoming.value)
+            homeItemsList.add(HomeRecyclerViewItem.Title(3, "Past Bets"))
+            homeItemsList.addAll(pastBets.value)
             _homeListItemsLiveData.postValue(Resource.Success(homeItemsList))
             Log.i("MYTAG", "success")
         }else{

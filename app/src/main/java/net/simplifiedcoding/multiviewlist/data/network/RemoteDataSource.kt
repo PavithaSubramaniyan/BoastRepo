@@ -11,7 +11,7 @@ import javax.inject.Inject
 class RemoteDataSource @Inject constructor() {
 
     companion object {
-        private const val BASE_URL = "https://60d194a45b017400178f3e51.mockapi.io/"
+        private const val BASE_URL = "https://037aa93a-188d-493d-8d56-aae2ee1ef53d.mock.pstmn.io/"
     }
 
     fun <Api> buildApi(

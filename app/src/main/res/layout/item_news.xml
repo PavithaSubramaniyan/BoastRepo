@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools">
 
     <com.facebook.drawee.view.SimpleDraweeView
-        android:id="@+id/image_view_director"
+        android:id="@+id/image_view_news"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_marginStart="8dp"
@@ -15,33 +16,34 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:background="@drawable/ic_director" />
+        tools:background="@drawable/play"
+        android:layout_marginLeft="8dp" />
 
     <TextView
-        android:id="@+id/text_view_name"
+        android:id="@+id/text_view_content"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:fontFamily="@font/poppins"
+        android:fontFamily="@font/rubik_light"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/image_view_director"
-        app:layout_constraintTop_toTopOf="@+id/image_view_director"
-        tools:text="Rakesh Omprakash Mehra" />
+        app:layout_constraintStart_toEndOf="@+id/image_view_news"
+        app:layout_constraintTop_toTopOf="@+id/image_view_news"
+        tools:text="Rakesh Omprakash Mehra fjg gcfj" />
 
     <TextView
-        android:id="@+id/text_view_movies"
+        android:id="@+id/text_view_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="@font/poppins"
-        android:text="@string/total_movies"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/rubik_light"
+        android:text="@string/total_news"
         android:textSize="14sp"
-        app:layout_constraintStart_toEndOf="@+id/image_view_director"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_name" />
+        app:layout_constraintStart_toEndOf="@+id/image_view_news"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_content" />
 
     <View
         android:layout_width="0dp"
@@ -52,18 +54,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_view_director" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="168dp"
-        android:layout_marginBottom="16dp"
-        android:text="12,aug 2012"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.058"
-        app:layout_constraintStart_toEndOf="@+id/text_view_movies" />
+        app:layout_constraintTop_toBottomOf="@+id/image_view_news" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

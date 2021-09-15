@@ -6,9 +6,13 @@ import retrofit2.http.GET
 
 interface Api {
 
-    @GET("movies")
-    suspend fun getMovies(): List<HomeRecyclerViewItem.Movie>
+    @GET("news")
+    suspend fun getNews(): List<HomeRecyclerViewItem.News>
 
-    @GET("directors")
-    suspend fun getDirectors(): List<HomeRecyclerViewItem.Director>
+
+    @GET("upcomingbet")
+    suspend fun getUpcomingBets(): List<HomeRecyclerViewItem.UpcomingBets>
+
+    @GET("pastbets")
+    suspend fun getPastBets(): List<HomeRecyclerViewItem.PastBets>
 }
