@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="145dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="4dp"
+        android:text="CSK vs RCB"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/text_price"
+        android:layout_width="39dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="195dp"
+        android:text="$ 15"
+        app:layout_constraintBottom_toBottomOf="@+id/text_title"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/text_title"
+        app:layout_constraintVertical_bias="0.428" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="184dp"
+        android:src="@drawable/rect"
+        app:layout_constraintBottom_toBottomOf="@+id/text_price"
+        app:layout_constraintStart_toEndOf="@+id/text_title"
+        app:layout_constraintTop_toTopOf="@+id/text_price"
+        app:layout_constraintVertical_bias="0.357" />
+
+    <TextView
+        android:id="@+id/text_range"
+        android:layout_width="65dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="96dp"
+        android:gravity="center"
+        android:text="WON"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/text_price"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.375" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

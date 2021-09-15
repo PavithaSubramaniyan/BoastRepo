@@ -7,6 +7,7 @@ import javax.inject.Inject
 class Repository @Inject constructor(
     private val api: Api
 ) : SafeApiCall {
-    suspend fun getMovies() = safeApiCall { api.getMovies() }
-    suspend fun getDirectors() = safeApiCall { api.getDirectors() }
+    suspend fun getNews() = safeApiCall { api.getNews() }
+    suspend fun getUpcomingbets() = safeApiCall { api.getUpcomingBets() }
+    suspend fun getPastbets() = safeApiCall { api.getPastBets() }
 }

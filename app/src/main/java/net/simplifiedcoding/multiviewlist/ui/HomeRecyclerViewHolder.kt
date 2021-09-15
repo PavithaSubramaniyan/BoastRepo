@@ -4,9 +4,7 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 import net.simplifiedcoding.multiviewlist.R
-import net.simplifiedcoding.multiviewlist.databinding.ItemDirectorBinding
-import net.simplifiedcoding.multiviewlist.databinding.ItemMovieBinding
-import net.simplifiedcoding.multiviewlist.databinding.ItemTitleBinding
+import net.simplifiedcoding.multiviewlist.databinding.*
 
 sealed class HomeRecyclerViewHolder(binding: ViewBinding) : RecyclerView.ViewHolder(binding.root) {
 
@@ -21,24 +19,29 @@ sealed class HomeRecyclerViewHolder(binding: ViewBinding) : RecyclerView.ViewHol
         }
     }
 
-    class MovieViewHolder(private val binding: ItemMovieBinding) : HomeRecyclerViewHolder(binding){
-        fun bind(movie: HomeRecyclerViewItem.Movie){
-            binding.imageViewMovie.loadImage(movie.thumbnail)
+    class NewsViewHolder(private val binding: ItemNewsBinding) : HomeRecyclerViewHolder(binding){
+        fun bind(news: HomeRecyclerViewItem.News){
+            binding.imageViewNews.loadImage(news.image)
+            binding.textViewContent.text = news.title
+            binding.textViewDate.text = news.date
             binding.root.setOnClickListener {
-                itemClickListener?.invoke(it, movie, adapterPosition)
+                itemClickListener?.invoke(it,news,adapterPosition)
             }
         }
     }
 
-    class DirectorViewHolder(private val binding: ItemDirectorBinding) : HomeRecyclerViewHolder(binding){
-        fun bind(director: HomeRecyclerViewItem.Director){
-            binding.imageViewDirector.loadImage(director.avatar)
-            binding.textViewName.text = director.name
-            binding.textView.text = director.title
-            binding.textViewMovies.text = binding.textViewMovies.context.getString(R.string.total_movies, director.movie_count)
-            binding.root.setOnClickListener {
-                itemClickListener?.invoke(it, director, adapterPosition)
-            }
+    class UpcomingbetsViewHolder(private val binding: ItemUpcomingBetsBinding) : HomeRecyclerViewHolder(binding){
+        fun bind(upcomingBets: HomeRecyclerViewItem.UpcomingBets){
+            binding.bettingPerson.text = upcomingBets.compatitor
+            binding.firstLetter.text = upcomingBets.letter
+            binding.fullName.text = upcomingBets.name
+        }
+    }
+    class PastbetsViewHolder(private val binding: ItemPastBetsBinding) : HomeRecyclerViewHolder(binding){
+        fun bind(pastBets: HomeRecyclerViewItem.PastBets){
+            binding.textTitle.text = pastBets.compatitors
+            binding.textPrice.text = pastBets.price
+            binding.textRange.text = pastBets.range
         }
     }
 }

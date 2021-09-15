@@ -5,9 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import net.simplifiedcoding.multiviewlist.R
-import net.simplifiedcoding.multiviewlist.databinding.ItemDirectorBinding
-import net.simplifiedcoding.multiviewlist.databinding.ItemMovieBinding
+import net.simplifiedcoding.multiviewlist.databinding.ItemNewsBinding
+import net.simplifiedcoding.multiviewlist.databinding.ItemPastBetsBinding
 import net.simplifiedcoding.multiviewlist.databinding.ItemTitleBinding
+import net.simplifiedcoding.multiviewlist.databinding.ItemUpcomingBetsBinding
 import java.lang.IllegalArgumentException
 
 class HomeRecyclerViewAdapter : RecyclerView.Adapter<HomeRecyclerViewHolder>() {
@@ -29,15 +30,22 @@ class HomeRecyclerViewAdapter : RecyclerView.Adapter<HomeRecyclerViewHolder>() {
                     false
                 )
             )
-            R.layout.item_movie -> HomeRecyclerViewHolder.MovieViewHolder(
-                ItemMovieBinding.inflate(
+            R.layout.item_news -> HomeRecyclerViewHolder.NewsViewHolder(
+                ItemNewsBinding.inflate(
                     LayoutInflater.from(parent.context),
                     parent,
                     false
                 )
             )
-            R.layout.item_director -> HomeRecyclerViewHolder.DirectorViewHolder(
-                ItemDirectorBinding.inflate(
+            R.layout.item_upcoming_bets -> HomeRecyclerViewHolder.UpcomingbetsViewHolder(
+                ItemUpcomingBetsBinding.inflate(
+                    LayoutInflater.from(parent.context),
+                    parent,
+                    false
+                )
+            )
+            R.layout.item_past_bets -> HomeRecyclerViewHolder.PastbetsViewHolder(
+                ItemPastBetsBinding.inflate(
                     LayoutInflater.from(parent.context),
                     parent,
                     false
@@ -50,8 +58,9 @@ class HomeRecyclerViewAdapter : RecyclerView.Adapter<HomeRecyclerViewHolder>() {
     override fun onBindViewHolder(holder: HomeRecyclerViewHolder, position: Int) {
         holder.itemClickListener = itemClickListener
         when (holder) {
-            is HomeRecyclerViewHolder.DirectorViewHolder -> holder.bind(items[position] as HomeRecyclerViewItem.Director)
-            is HomeRecyclerViewHolder.MovieViewHolder -> holder.bind(items[position] as HomeRecyclerViewItem.Movie)
+            is HomeRecyclerViewHolder.NewsViewHolder -> holder.bind(items[position] as HomeRecyclerViewItem.News)
+            is HomeRecyclerViewHolder.UpcomingbetsViewHolder -> holder.bind(items[position] as HomeRecyclerViewItem.UpcomingBets)
+            is HomeRecyclerViewHolder.PastbetsViewHolder -> holder.bind(items[position] as HomeRecyclerViewItem.PastBets)
             is HomeRecyclerViewHolder.TitleViewHolder -> holder.bind(items[position] as HomeRecyclerViewItem.Title)
         }
     }
@@ -60,8 +69,9 @@ class HomeRecyclerViewAdapter : RecyclerView.Adapter<HomeRecyclerViewHolder>() {
 
     override fun getItemViewType(position: Int): Int {
         return when (items[position]) {
-            is HomeRecyclerViewItem.Director -> R.layout.item_director
-            is HomeRecyclerViewItem.Movie -> R.layout.item_movie
+            is HomeRecyclerViewItem.News -> R.layout.item_news
+            is HomeRecyclerViewItem.UpcomingBets -> R.layout.item_upcoming_bets
+            is HomeRecyclerViewItem.PastBets -> R.layout.item_past_bets
             is HomeRecyclerViewItem.Title -> R.layout.item_title
         }
     }
