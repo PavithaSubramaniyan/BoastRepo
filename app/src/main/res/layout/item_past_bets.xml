@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,49 +10,62 @@
         android:id="@+id/text_title"
         android:layout_width="145dp"
         android:layout_height="20dp"
-        android:layout_marginStart="4dp"
-        android:text="CSK vs RCB"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.4"
-        tools:ignore="MissingConstraints" />
+        android:layout_marginStart="28dp"
+        android:fontFamily="@font/poppins"
+        android:text="@string/csk_vs_rcb"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView4" />
 
     <TextView
         android:id="@+id/text_price"
         android:layout_width="39dp"
         android:layout_height="20dp"
         android:layout_marginStart="195dp"
-        android:text="$ 15"
+        android:text="@string/_15"
         app:layout_constraintBottom_toBottomOf="@+id/text_title"
         app:layout_constraintEnd_toStartOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.193"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/text_title"
-        app:layout_constraintVertical_bias="0.428" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="184dp"
+        android:layout_marginStart="148dp"
         android:src="@drawable/rect"
         app:layout_constraintBottom_toBottomOf="@+id/text_price"
         app:layout_constraintStart_toEndOf="@+id/text_title"
         app:layout_constraintTop_toTopOf="@+id/text_price"
-        app:layout_constraintVertical_bias="0.357" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/text_range"
         android:layout_width="65dp"
         android:layout_height="22dp"
-        android:layout_marginStart="96dp"
+        android:layout_marginStart="72dp"
         android:gravity="center"
-        android:text="WON"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        android:text="@string/won"
+        app:layout_constraintBottom_toBottomOf="@+id/text_price"
         app:layout_constraintStart_toEndOf="@+id/text_price"
+        app:layout_constraintTop_toTopOf="@+id/text_price"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="392dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.375" />
+        app:srcCompat="@drawable/recyclerbox" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
